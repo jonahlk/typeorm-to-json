@@ -1,10 +1,10 @@
 {
-  "name": "typeorm-json-schema-generator",
+  "name": "typeorm-to-json",
   "version": "1.0.0",
-  "description": "Generate JSON schema of all models and relations from typeorm entities",
+  "description": "Convert all typeorm entities to javascript model definition objects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Jonah",
+  "author": "jonahlk",
   "license": "MIT",
   "scripts": {
     "build": "tsc"
@@ -20,5 +20,5 @@
     "@types/pluralize": "^0.0.29",
     "typescript": "^4.5.5"
   },
-  "keywords": ["typeorm", "json", "generator"]
+  "keywords": ["typeorm", "json", "object", "generator"]
 }
