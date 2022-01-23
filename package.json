@@ -1,0 +1,24 @@
+{
+  "name": "typeorm-json-schema-generator",
+  "version": "1.0.0",
+  "description": "Generate JSON schema of all models and relations from typeorm entities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Jonah",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "case": "^1.6.3",
+    "pg": "^8.7.1",
+    "pluralize": "^8.0.0",
+    "typeorm": "^0.2.41"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "@types/pluralize": "^0.0.29",
+    "typescript": "^4.5.5"
+  },
+  "keywords": ["typeorm", "json", "generator"]
+}
