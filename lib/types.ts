@@ -1,9 +1,11 @@
 import {ColumnType} from 'typeorm/driver/types/ColumnTypes';
+import {TableType} from 'typeorm/metadata/types/TableTypes';
 
 
 export type ModelDefinition = {
   name: string,
   tableName: string,
+  type: TableType,
   schema: string,
   fields: Array<{
     name: string,

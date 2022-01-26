@@ -1,10 +1,14 @@
 {
   "name": "typeorm-to-json",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Convert all typeorm entities to javascript model definition objects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "jonahlk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonahlk/typeorm-to-json.git"
+  },
   "license": "MIT",
   "scripts": {
     "build": "tsc"
