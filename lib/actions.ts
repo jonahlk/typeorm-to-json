@@ -25,7 +25,7 @@ export const addCompositePrimaryKeys = (_entity, formattedModel: ModelDefinition
 
 export const addColumns = (_entity, formattedModel: ModelDefinition) => {
   for (const _column of _entity.columns) {
-    const {isPrimary, isNullable, propertyName, givenDatabaseName, type} = _column;
+    const {isPrimary, isNullable, propertyName, givenDatabaseName, type, isArray} = _column;
     const uniqueConstraint = formattedModel.constraints.find(constraint => constraint.type === 'unique');
     const isUnique = uniqueConstraint?.columns.length === 1 && uniqueConstraint.columns[0].name === propertyName;
 
@@ -39,6 +39,7 @@ export const addColumns = (_entity, formattedModel: ModelDefinition) => {
       dbColumnName: givenDatabaseName,
       dbType: typeof type === 'function' ? 'integer' : type || 'Unsupported("ViewColumn")',
       isPrimary: _entity.hasMultiplePrimaryKeys ? false : isPrimary,
+      isArray,
       isNullable,
       isUnique,
     });

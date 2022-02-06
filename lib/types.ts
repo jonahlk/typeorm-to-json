@@ -11,6 +11,7 @@ export type ModelDefinition = {
     name: string,
     dbType: ColumnType | string,
     dbColumnName: string,
+    isArray: boolean,
     isPrimary: boolean,
     isNullable: boolean,
     isUnique: boolean
