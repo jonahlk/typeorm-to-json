@@ -33,12 +33,13 @@ export const addColumns = (_entity, formattedModel: ModelDefinition) => {
       const uniqueConstraintIndex = formattedModel.constraints.indexOf(uniqueConstraint);
       formattedModel.constraints.splice(uniqueConstraintIndex, 1);
     }
-
+ 
     formattedModel.fields.push({
       name: propertyName,
       dbColumnName: givenDatabaseName,
       dbType: typeof type === 'function' ? 'integer' : type || 'Unsupported("ViewColumn")',
       isPrimary: _entity.hasMultiplePrimaryKeys ? false : isPrimary,
+      isGenerated: _column.isGenerated,
       isArray,
       isNullable,
       isUnique,

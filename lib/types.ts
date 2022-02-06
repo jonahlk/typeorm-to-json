@@ -13,6 +13,7 @@ export type ModelDefinition = {
     dbColumnName: string,
     isArray: boolean,
     isPrimary: boolean,
+    isGenerated: boolean,
     isNullable: boolean,
     isUnique: boolean
   }>
