@@ -33,7 +33,7 @@ export const addColumns = (_entity, formattedModel: ModelDefinition) => {
       const uniqueConstraintIndex = formattedModel.constraints.indexOf(uniqueConstraint);
       formattedModel.constraints.splice(uniqueConstraintIndex, 1);
     }
- 
+
     formattedModel.fields.push({
       name: propertyName,
       dbColumnName: givenDatabaseName,
@@ -64,8 +64,13 @@ export const addOneToXRelations = (_entity, formattedModel: ModelDefinition) => 
       key = propertyName;
     }
 
-    const fields = foreignKeys[0]?.columns.map(column => column.propertyName);
-    const references = foreignKeys[0]?.referencedColumns.map(column => column.propertyName);
+    let fields = foreignKeys[0]?.columns.map(column => column.propertyName);
+    let references = foreignKeys[0]?.referencedColumns.map(column => column.propertyName);
+
+    if (!foreignKeys[0]) {
+      fields = _relation.joinColumns.map(x => x.propertyName);
+      references = _relation.joinColumns.map(x => x.referencedColumn.propertyName);
+    }
 
     formattedModel.relations.push({
       name: propertyName,
